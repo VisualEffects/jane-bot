@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 ##########################################################################
-# Jane - A stweard bot for operation on Wikia wikis. 
+#    Jane - A helper bot for operation on Wikia wikis. 
 #    Copyright (C) 2014  Benjamin Williams cataclysmicpinkiepie@gmail.com
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -50,10 +50,10 @@ class Jane(chatbot.ChatBot):
         self._auth = [u'Lil\' Miss Rarity']
         
         #Sysops
-        self._auth.append(self._tybot.get_users_by_group("sysop"))
+        self._auth = self._auth + self._tybot.get_users_by_group("sysop")
         
         #Chat moderators
-        self._auth.append(self._tybot.get_users_by_group("chatmoderator"))
+        self._auth = self._auth + self._tybot.get_users_by_group("chatmoderator")
         
         #Ignored users
         self._ignored = []
