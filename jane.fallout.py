@@ -276,7 +276,7 @@ class Jane(chatbot.ChatBot):
     def _print_rule(self, text, c):
     
         #Get rule number (string)
-        i = e.text.replace("$rule ", "")
+        i = text.replace("$rule ", "")
         
         #Check if i is an int and not random text
         if i.isdigit():
