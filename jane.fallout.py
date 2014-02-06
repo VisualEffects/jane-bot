@@ -203,7 +203,7 @@ class Jane(chatbot.ChatBot):
     def _ignore(self, text, c):
         
         #Get user to ignore
-        user = e.text.replace("$ignore ", "")
+        user = text.replace("$ignore ", "")
         
         #Make sure they aren't authenticated        
         if self._auth.count(user) >= 1:
@@ -322,7 +322,7 @@ class Jane(chatbot.ChatBot):
     def _unignore(self, text, c):
     
         #Get user
-        user = e.text.replace("$unignore ", "")
+        user = text.replace("$unignore ", "")
           
         #Checks if user was ignored        
         if self._ignored.count(user) == 1:
