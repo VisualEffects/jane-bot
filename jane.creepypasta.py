@@ -19,11 +19,13 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ##########################################################################
 
-import tybot
-import chatbot
-import sys
-import os
 import datetime
+import getpass
+import os
+import sys
+
+import chatbot
+import tybot
 
 """
 Chat logger
@@ -305,9 +307,14 @@ Setup
 Gather login information and pass it
 to the required class methods
 """
-username = sys.argv[1]
-password = sys.argv[2]
-subdomain = sys.argv[3]
+if (len(sys.argv) < 4): # program, username, password, subdomain
+    username = raw_input("Username: ")
+    password = getpass.getpass("Password: ")
+    subdomain = raw_input("Subdomain: ")
+else:
+    username = sys.argv[1]
+    password = sys.argv[2]
+    subdomain = sys.argv[3]
 
 #Site URL
 wiki = "http://" + subdomain + ".wikia.com"
